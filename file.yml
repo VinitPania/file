@@ -1,0 +1,13 @@
+---
+- name: all
+  hosts: all
+  become: true
+  become_user: sandy
+  tasks:
+    - name: file
+      file:
+        dest: /home/sandy/khalid.txt
+        state: touch
+      register: all
+    - debug:
+        var: all
